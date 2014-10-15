@@ -43,6 +43,8 @@ class Runner(object):
             self.job._run_combiner(stdin, stdout)
         elif kind == "reduce":
             self.job._run_reducer(stdin, stdout)
+        elif kind == 'yarn':
+            self.job.main()
         else:
             raise Exception('weird command: %s' % kind)
 
